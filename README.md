@@ -27,6 +27,6 @@ Instead of getting all data at once, it fetches the data page by page.
 
 Image #1            |  Image #2             
 :-------------------------:|:----------------------------:
-<img src="images/Athena_Paintings_1.jpg">    |  <img src="images/Athena_Paintings_1.jpg">    
+<img src="images/Athena_Paintings_1.jpg">    |  <img src="images/Athena_Paintings_2.jpg">    
 
 
