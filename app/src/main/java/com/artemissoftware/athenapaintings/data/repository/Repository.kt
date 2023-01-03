@@ -6,6 +6,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.artemissoftware.athenapaintings.data.database.UnsplashDatabase
 import com.artemissoftware.athenapaintings.data.models.UnsplashImage
+import com.artemissoftware.athenapaintings.data.paging.SearchPagingSource
 import com.artemissoftware.athenapaintings.data.paging.UnsplashRemoteMediator
 import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
 import com.artemissoftware.athenapaintings.util.Constants.ITEMS_PER_PAGE
@@ -29,4 +30,14 @@ class Repository @Inject constructor(
             pagingSourceFactory = pagingSourceFactory
         ).flow
     }
+
+    fun searchImages(query: String): Flow<PagingData<UnsplashImage>> {
+        return Pager(
+            config = PagingConfig(pageSize = ITEMS_PER_PAGE),
+            pagingSourceFactory = {
+                SearchPagingSource(unsplashApi = unsplashApi, query = query)
+            }
+        ).flow
+    }
+
 }
