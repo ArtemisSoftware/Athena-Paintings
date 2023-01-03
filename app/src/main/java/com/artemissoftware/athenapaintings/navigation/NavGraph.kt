@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.paging.ExperimentalPagingApi
 import coil.annotation.ExperimentalCoilApi
 import com.artemissoftware.athenapaintings.screens.home.HomeScreen
+import com.artemissoftware.athenapaintings.screens.search.SearchScreen
 
 @ExperimentalCoilApi
 @ExperimentalPagingApi
@@ -19,8 +20,8 @@ fun SetupNavGraph(navController: NavHostController) {
         composable(route = Destinations.Home.route){
             HomeScreen(navController = navController)
         }
-//        composable(route = Destinations.Search.route){
-//            SearchScreen(navController = navController)
-//        }
+        composable(route = Destinations.Search.route){
+            SearchScreen(navController = navController)
+        }
     }
 }
