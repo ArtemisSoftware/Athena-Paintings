@@ -1,6 +1,6 @@
-package com.artemissoftware.athenapaintings.data.remote
+package com.artemissoftware.data.remote
 
-import com.artemissoftware.athenapaintings.BuildConfig.API_KEY
+import com.artemissoftware.data.BuildConfig
 import com.artemissoftware.data.models.SearchResult
 import com.artemissoftware.data.models.UnsplashImage
 import retrofit2.http.GET
@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface UnsplashApi {
 
-    @Headers("Authorization: Client-ID $API_KEY")
+    @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
     @GET("/photos")
     suspend fun getAllImages(
         @Query("page") page: Int,
@@ -17,7 +17,7 @@ interface UnsplashApi {
     ): List<UnsplashImage>
 
 
-    @Headers("Authorization: Client-ID $API_KEY")
+    @Headers("Authorization: Client-ID ${BuildConfig.API_KEY}")
     @GET("/search/photos")
     suspend fun searchImages(
         @Query("query") query: String,

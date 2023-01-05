@@ -3,7 +3,7 @@ package com.artemissoftware.athenapaintings.data.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.artemissoftware.data.models.UnsplashImage
-import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
+import com.artemissoftware.data.remote.UnsplashApi
 import com.artemissoftware.data.util.Constants.ITEMS_PER_PAGE
 
 class SearchPagingSource(
@@ -13,6 +13,7 @@ class SearchPagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UnsplashImage> {
         val currentPage = params.key ?: 1
+
         return try {
             val response = unsplashApi.searchImages(query = query, perPage = ITEMS_PER_PAGE, page = currentPage)
             val endOfPaginationReached = response.images.isEmpty()

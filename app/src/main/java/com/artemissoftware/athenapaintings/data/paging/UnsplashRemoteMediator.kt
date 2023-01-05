@@ -8,7 +8,7 @@ import androidx.room.withTransaction
 import com.artemissoftware.data.database.UnsplashDatabase
 import com.artemissoftware.data.models.UnsplashImage
 import com.artemissoftware.data.models.UnsplashRemoteKeys
-import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
+import com.artemissoftware.data.remote.UnsplashApi
 import com.artemissoftware.data.util.Constants.ITEMS_PER_PAGE
 import javax.inject.Inject
 
