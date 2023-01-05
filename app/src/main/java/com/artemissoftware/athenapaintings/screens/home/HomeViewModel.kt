@@ -2,7 +2,7 @@ package com.artemissoftware.athenapaintings.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.paging.ExperimentalPagingApi
-import com.artemissoftware.athenapaintings.data.repository.Repository
+import com.artemissoftware.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

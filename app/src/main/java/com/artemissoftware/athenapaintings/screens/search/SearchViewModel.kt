@@ -7,7 +7,7 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.artemissoftware.data.models.UnsplashImage
-import com.artemissoftware.athenapaintings.data.repository.Repository
+import com.artemissoftware.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect

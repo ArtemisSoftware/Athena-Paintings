@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.data.repository
+package com.artemissoftware.data.repository
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
