@@ -39,10 +39,12 @@ class MainActivity : ComponentActivity() {
                     Greeting(searchedImagesLO.loadState.refresh.toString())
                     Greeting(searchedImagesLO.loadState.append.toString())
                     Greeting(searchedImagesLO.loadState.prepend.toString())
+
+                    val navController = rememberNavController()
+                    SetupNavGraph(navController = navController)
                 }
 
-//                val navController = rememberNavController()
-//                SetupNavGraph(navController = navController)
+
             }
         }
     }

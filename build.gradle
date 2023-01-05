@@ -1,5 +1,11 @@
 buildscript {
+
+    apply from: 'configuration.gradle'
+
     ext {
+
+        gradle_version = "$rootProject.versions.gradle"
+        kotlin_version = "$rootProject.versions.kotlin"
         compose_ui_version = '1.1.1'
         kotlin_version = '1.6.0'
     }

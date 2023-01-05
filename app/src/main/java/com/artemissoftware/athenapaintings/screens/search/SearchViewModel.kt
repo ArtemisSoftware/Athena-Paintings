@@ -9,6 +9,7 @@ import androidx.paging.cachedIn
 import com.artemissoftware.data.models.UnsplashImage
 import com.artemissoftware.data.repository.RepositoryImpl
 import com.artemissoftware.domain.UnsplashImageUi
+import com.artemissoftware.domain.usecases.SearchUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -17,7 +18,7 @@ import javax.inject.Inject
 @ExperimentalPagingApi
 @HiltViewModel
 class SearchViewModel @Inject constructor(
-    private val repository: RepositoryImpl
+    private val searchUseCase: SearchUseCase
 ) : ViewModel() {
 
     private val _searchQuery = mutableStateOf("")
@@ -32,7 +33,7 @@ class SearchViewModel @Inject constructor(
 
     fun searchHeroes(query: String) {
         viewModelScope.launch {
-            repository.searchImages(query = query).cachedIn(viewModelScope).collect {
+            searchUseCase(query = query).cachedIn(viewModelScope).collect {
                 _searchedImages.value = it
             }
         }
