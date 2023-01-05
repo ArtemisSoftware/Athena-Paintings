@@ -2,9 +2,9 @@ package com.artemissoftware.athenapaintings.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.artemissoftware.models.UnsplashImage
+import com.artemissoftware.data.models.UnsplashImage
 import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
-import com.artemissoftware.util.Constants.ITEMS_PER_PAGE
+import com.artemissoftware.data.util.Constants.ITEMS_PER_PAGE
 
 class SearchPagingSource(
     private val unsplashApi: UnsplashApi,

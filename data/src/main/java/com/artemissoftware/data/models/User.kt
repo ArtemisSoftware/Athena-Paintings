@@ -1,4 +1,4 @@
-package com.artemissoftware.models
+package com.artemissoftware.data.models
 
 import androidx.room.Embedded
 import kotlinx.serialization.SerialName

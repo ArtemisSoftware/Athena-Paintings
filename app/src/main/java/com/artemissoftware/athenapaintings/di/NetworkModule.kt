@@ -1,7 +1,7 @@
 package com.artemissoftware.athenapaintings.di
 
 import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
-import com.artemissoftware.util.Constants.BASE_URL
+import com.artemissoftware.data.util.Constants.BASE_URL
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides

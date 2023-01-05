@@ -2,8 +2,8 @@ package com.artemissoftware.athenapaintings.di
 
 import android.content.Context
 import androidx.room.Room
-import com.artemissoftware.athenapaintings.data.database.UnsplashDatabase
-import com.artemissoftware.util.Constants.UNSPLASH_DATABASE
+import com.artemissoftware.data.database.UnsplashDatabase
+import com.artemissoftware.data.util.Constants.UNSPLASH_DATABASE
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,8 +1,8 @@
 package com.artemissoftware.athenapaintings.data.remote
 
 import com.artemissoftware.athenapaintings.BuildConfig.API_KEY
-import com.artemissoftware.models.SearchResult
-import com.artemissoftware.models.UnsplashImage
+import com.artemissoftware.data.models.SearchResult
+import com.artemissoftware.data.models.UnsplashImage
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query

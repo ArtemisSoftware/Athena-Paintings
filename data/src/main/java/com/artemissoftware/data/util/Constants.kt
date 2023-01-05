@@ -1,4 +1,4 @@
-package com.artemissoftware.util
+package com.artemissoftware.data.util
 
 object Constants {
 
