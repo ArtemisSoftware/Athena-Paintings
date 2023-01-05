@@ -1,10 +1,9 @@
 package com.artemissoftware.data.models
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
-@Serializable
+import com.google.gson.annotations.SerializedName
+
 data class SearchResult(
-    @SerialName("results")
-    val images: List<UnsplashImage>,
+    @SerializedName("results")
+    val images: List<UnsplashImage>
 )

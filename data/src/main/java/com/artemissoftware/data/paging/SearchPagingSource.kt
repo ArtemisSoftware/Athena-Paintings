@@ -15,8 +15,10 @@ class SearchPagingSource(
         val currentPage = params.key ?: 1
 
         return try {
+
             val response = unsplashApi.searchImages(query = query, perPage = ITEMS_PER_PAGE, page = currentPage)
             val endOfPaginationReached = response.images.isEmpty()
+
             if (response.images.isNotEmpty()) {
                 LoadResult.Page(
                     data = response.images,

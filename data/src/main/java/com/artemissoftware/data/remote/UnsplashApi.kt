@@ -24,4 +24,5 @@ interface UnsplashApi {
         @Query("per_page") perPage: Int,
         @Query("page") page: Int
     ): SearchResult
+
 }

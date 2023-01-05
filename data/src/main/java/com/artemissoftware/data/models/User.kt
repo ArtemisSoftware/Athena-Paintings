@@ -1,13 +1,14 @@
 package com.artemissoftware.data.models
 
-import androidx.room.Embedded
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
-@Serializable
+import androidx.room.Embedded
+import com.google.gson.annotations.SerializedName
+
 data class User(
-    @SerialName("links")
     @Embedded
-    val userLinks: UserLinks,
+    @SerializedName("links")
+    val links: UserLinks,
+
+    @SerializedName("username")
     val username: String
 )

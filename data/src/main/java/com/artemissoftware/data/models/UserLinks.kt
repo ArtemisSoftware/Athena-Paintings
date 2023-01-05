@@ -1,8 +1,9 @@
 package com.artemissoftware.data.models
 
-import kotlinx.serialization.Serializable
 
-@Serializable
+import com.google.gson.annotations.SerializedName
+
 data class UserLinks(
+    @SerializedName("html")
     val html: String
 )

@@ -1,8 +1,9 @@
 package com.artemissoftware.data.models
 
-import kotlinx.serialization.Serializable
 
-@Serializable
+import com.google.gson.annotations.SerializedName
+
 data class Urls(
-    val regular: String
+    @SerializedName("regular")
+    val regular: String,
 )
