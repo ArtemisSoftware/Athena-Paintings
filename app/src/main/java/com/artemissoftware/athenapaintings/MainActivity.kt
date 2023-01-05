@@ -3,6 +3,7 @@ package com.artemissoftware.athenapaintings
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -12,9 +13,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import androidx.paging.ExperimentalPagingApi
+import androidx.paging.PagingData
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.artemissoftware.athenapaintings.navigation.SetupNavGraph
 import com.artemissoftware.athenapaintings.ui.theme.AthenaPaintingsTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.MutableStateFlow
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -24,8 +28,21 @@ class MainActivity : ComponentActivity() {
         setContent {
             AthenaPaintingsTheme {
 
-                val navController = rememberNavController()
-                SetupNavGraph(navController = navController)
+                val _searchedImages = MutableStateFlow<PagingData<String>>(PagingData.empty())
+                val searchedImages = _searchedImages
+
+                val searchedImagesLO = searchedImages.collectAsLazyPagingItems()
+                val dd = searchedImagesLO.toString()
+                val ddd = dd + ""
+
+                Column {
+                    Greeting(searchedImagesLO.loadState.refresh.toString())
+                    Greeting(searchedImagesLO.loadState.append.toString())
+                    Greeting(searchedImagesLO.loadState.prepend.toString())
+                }
+
+//                val navController = rememberNavController()
+//                SetupNavGraph(navController = navController)
             }
         }
     }
