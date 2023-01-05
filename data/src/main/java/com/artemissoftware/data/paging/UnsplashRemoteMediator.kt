@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.data.paging
+package com.artemissoftware.data.paging
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
@@ -10,7 +10,6 @@ import com.artemissoftware.data.models.UnsplashImage
 import com.artemissoftware.data.models.UnsplashRemoteKeys
 import com.artemissoftware.data.remote.UnsplashApi
 import com.artemissoftware.data.util.Constants.ITEMS_PER_PAGE
-import javax.inject.Inject
 
 @ExperimentalPagingApi
 class UnsplashRemoteMediator(

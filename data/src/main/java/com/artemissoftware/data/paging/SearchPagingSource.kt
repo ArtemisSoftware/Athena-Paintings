@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.data.paging
+package com.artemissoftware.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
