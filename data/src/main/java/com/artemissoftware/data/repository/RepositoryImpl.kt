@@ -1,25 +1,25 @@
 package com.artemissoftware.data.repository
 
-import androidx.paging.ExperimentalPagingApi
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
+import androidx.paging.*
 import com.artemissoftware.data.database.UnsplashDatabase
 import com.artemissoftware.data.models.UnsplashImage
 import com.artemissoftware.data.paging.SearchPagingSource
 import com.artemissoftware.data.paging.UnsplashRemoteMediator
 import com.artemissoftware.data.remote.UnsplashApi
 import com.artemissoftware.data.util.Constants.ITEMS_PER_PAGE
+import com.artemissoftware.domain.Repository
+import com.artemissoftware.domain.UnsplashImageUi
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 @ExperimentalPagingApi
-class Repository @Inject constructor(
+class RepositoryImpl @Inject constructor(
     private val unsplashApi: UnsplashApi,
     private val unsplashDatabase: UnsplashDatabase
-) {
+): Repository {
 
-    fun getAllImages(): Flow<PagingData<UnsplashImage>> {
+    override fun getAllImages(): Flow<PagingData<UnsplashImageUi>> {
         val pagingSourceFactory = { unsplashDatabase.unsplashImageDao().getAllImages() }
         return Pager(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),
@@ -28,16 +28,34 @@ class Repository @Inject constructor(
                 unsplashDatabase = unsplashDatabase
             ),
             pagingSourceFactory = pagingSourceFactory
-        ).flow
+        ).flow.map {
+            it.map {
+                UnsplashImageUi(
+                    id = it.id,
+                    regularUrl = it.urls.regular,
+                    likes = it.likes,
+                    username = it.user.username)
+            }
+        }
     }
 
-    fun searchImages(query: String): Flow<PagingData<UnsplashImage>> {
+    override fun searchImages(query: String): Flow<PagingData<UnsplashImageUi>> {
         return Pager(
             config = PagingConfig(pageSize = ITEMS_PER_PAGE),
             pagingSourceFactory = {
                 SearchPagingSource(unsplashApi = unsplashApi, query = query)
             }
-        ).flow
+        ).flow.map {
+            it.map {
+                UnsplashImageUi(
+                    id = it.id,
+                    regularUrl = it.urls.regular,
+                    likes = it.likes,
+                    username = it.user.username)
+            }
+        }
     }
+
+
 
 }

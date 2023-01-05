@@ -12,10 +12,11 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
 import com.artemissoftware.data.models.UnsplashImage
+import com.artemissoftware.domain.UnsplashImageUi
 
 @ExperimentalCoilApi
 @Composable
-fun ListContent(items: LazyPagingItems<UnsplashImage>) {
+fun ListContent(items: LazyPagingItems<UnsplashImageUi>) {
     Log.d("Error", items.loadState.toString())
     LazyColumn(
         modifier = Modifier.fillMaxSize(),

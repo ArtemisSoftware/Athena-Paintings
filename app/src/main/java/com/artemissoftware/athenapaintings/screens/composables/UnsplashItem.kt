@@ -28,12 +28,13 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.artemissoftware.athenapaintings.R
 import com.artemissoftware.data.models.UnsplashImage
+import com.artemissoftware.domain.UnsplashImageUi
 
 @ExperimentalCoilApi
 @Composable
-fun UnsplashItem(unsplashImage: UnsplashImage) {
+fun UnsplashItem(unsplashImage: UnsplashImageUi) {
 
-    val painter = rememberImagePainter(data = unsplashImage.urls.regular) {
+    val painter = rememberImagePainter(data = unsplashImage.regularUrl) {
         crossfade(durationMillis = 1000)
         error(R.drawable.ic_launcher_background)
         placeholder(R.drawable.ic_launcher_background)
@@ -46,7 +47,7 @@ fun UnsplashItem(unsplashImage: UnsplashImage) {
             .clickable {
                 val browserIntent = Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://unsplash.com/@${unsplashImage.user.username}?utm_source=DemoApp&utm_medium=referral")
+                    Uri.parse("https://unsplash.com/@${unsplashImage.username}?utm_source=DemoApp&utm_medium=referral")
                 )
                 startActivity(context, browserIntent, null)
             }
@@ -79,7 +80,7 @@ fun UnsplashItem(unsplashImage: UnsplashImage) {
                 text = buildAnnotatedString {
                     append("Photo by ")
                     withStyle(style = SpanStyle(fontWeight = FontWeight.Black)) {
-                        append(unsplashImage.user.username)
+                        append(unsplashImage.username)
                     }
                     append(" on Unsplash")
                 },
