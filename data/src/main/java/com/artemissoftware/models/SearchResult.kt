@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.data.models
+package com.artemissoftware.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

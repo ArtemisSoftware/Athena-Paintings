@@ -1,9 +1,9 @@
-package com.artemissoftware.athenapaintings.data.models
+package com.artemissoftware.models
 
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.artemissoftware.athenapaintings.util.Constants.UNSPLASH_IMAGE_TABLE
+import com.artemissoftware.util.Constants.UNSPLASH_IMAGE_TABLE
 import kotlinx.serialization.Serializable
 
 @Serializable

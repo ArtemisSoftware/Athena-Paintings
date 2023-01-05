@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.util
+package com.artemissoftware.util
 
 object Constants {
 

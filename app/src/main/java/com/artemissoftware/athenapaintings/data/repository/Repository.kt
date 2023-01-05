@@ -5,11 +5,11 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.artemissoftware.athenapaintings.data.database.UnsplashDatabase
-import com.artemissoftware.athenapaintings.data.models.UnsplashImage
+import com.artemissoftware.models.UnsplashImage
 import com.artemissoftware.athenapaintings.data.paging.SearchPagingSource
 import com.artemissoftware.athenapaintings.data.paging.UnsplashRemoteMediator
 import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
-import com.artemissoftware.athenapaintings.util.Constants.ITEMS_PER_PAGE
+import com.artemissoftware.util.Constants.ITEMS_PER_PAGE
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

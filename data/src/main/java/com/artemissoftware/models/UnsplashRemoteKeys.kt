@@ -1,8 +1,8 @@
-package com.artemissoftware.athenapaintings.data.models
+package com.artemissoftware.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.artemissoftware.athenapaintings.util.Constants.UNSPLASH_REMOTE_KEYS_TABLE
+import com.artemissoftware.util.Constants.UNSPLASH_REMOTE_KEYS_TABLE
 
 @Entity(tableName = UNSPLASH_REMOTE_KEYS_TABLE)
 data class UnsplashRemoteKeys(

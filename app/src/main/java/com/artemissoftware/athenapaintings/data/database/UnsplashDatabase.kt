@@ -4,8 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.artemissoftware.athenapaintings.data.database.dao.UnsplashImageDao
 import com.artemissoftware.athenapaintings.data.database.dao.UnsplashRemoteKeysDao
-import com.artemissoftware.athenapaintings.data.models.UnsplashImage
-import com.artemissoftware.athenapaintings.data.models.UnsplashRemoteKeys
+import com.artemissoftware.models.UnsplashImage
+import com.artemissoftware.models.UnsplashRemoteKeys
 
 @Database(
     entities = [UnsplashImage::class, UnsplashRemoteKeys::class],

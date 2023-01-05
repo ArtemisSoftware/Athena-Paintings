@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.items
 import coil.annotation.ExperimentalCoilApi
-import com.artemissoftware.athenapaintings.data.models.UnsplashImage
+import com.artemissoftware.models.UnsplashImage
 
 @ExperimentalCoilApi
 @Composable

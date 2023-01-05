@@ -6,10 +6,10 @@ import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
 import com.artemissoftware.athenapaintings.data.database.UnsplashDatabase
-import com.artemissoftware.athenapaintings.data.models.UnsplashImage
-import com.artemissoftware.athenapaintings.data.models.UnsplashRemoteKeys
+import com.artemissoftware.models.UnsplashImage
+import com.artemissoftware.models.UnsplashRemoteKeys
 import com.artemissoftware.athenapaintings.data.remote.UnsplashApi
-import com.artemissoftware.athenapaintings.util.Constants.ITEMS_PER_PAGE
+import com.artemissoftware.util.Constants.ITEMS_PER_PAGE
 import javax.inject.Inject
 
 @ExperimentalPagingApi
