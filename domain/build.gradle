@@ -10,8 +10,15 @@ java {
 
 dependencies{
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation rootProject.libraries.kotlinxCoroutinesCore
+    implementation rootProject.libraries.dagger
+
+    //implementation rootProject.libraries.pagingCommon
     implementation "androidx.paging:paging-common:3.1.0"
-    implementation "com.google.dagger:dagger:2.44.2"
+
+    testImplementation rootProject.tests.kotlinTestJunit
+    testImplementation rootProject.tests.junit
+    testImplementation rootProject.tests.mockito
+    testImplementation rootProject.tests.kotlinxCoroutinesTest
 
 }

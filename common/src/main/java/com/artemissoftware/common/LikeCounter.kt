@@ -1,4 +1,4 @@
-package com.artemissoftware.athenapaintings.screens.composables
+package com.artemissoftware.common
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.artemissoftware.athenapaintings.ui.theme.HeartRed
+import com.artemissoftware.HeartRed
 
 @Composable
 fun LikeCounter(

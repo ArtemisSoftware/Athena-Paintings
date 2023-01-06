@@ -27,7 +27,7 @@ import androidx.core.content.ContextCompat.startActivity
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.artemissoftware.athenapaintings.R
-import com.artemissoftware.data.models.UnsplashImage
+import com.artemissoftware.common.LikeCounter
 import com.artemissoftware.domain.UnsplashImageUi
 
 @ExperimentalCoilApi
