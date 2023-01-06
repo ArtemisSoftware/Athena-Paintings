@@ -28,22 +28,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             AthenaPaintingsTheme {
 
-                val _searchedImages = MutableStateFlow<PagingData<String>>(PagingData.empty())
-                val searchedImages = _searchedImages
-
-                val searchedImagesLO = searchedImages.collectAsLazyPagingItems()
-                val dd = searchedImagesLO.toString()
-                val ddd = dd + ""
-
-                Column {
-                    Greeting(searchedImagesLO.loadState.refresh.toString())
-                    Greeting(searchedImagesLO.loadState.append.toString())
-                    Greeting(searchedImagesLO.loadState.prepend.toString())
-
-                    val navController = rememberNavController()
-                    SetupNavGraph(navController = navController)
-                }
-
+                val navController = rememberNavController()
+                SetupNavGraph(navController = navController)
 
             }
         }
