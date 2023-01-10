@@ -8,7 +8,7 @@ App that communicates with Unsplash API in order to display it's images in the a
 Pagination will be from Network and a local Database. 
 Instead of getting all data at once, it fetches the data page by page. 
 
-
+The is a separated branch where the app is devided by layer.
 
 ## Architecture & Libraries
     - MVVM
